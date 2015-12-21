@@ -52,11 +52,31 @@
                         <li><a href="contactus.html">
                          <i class="fa fa-envelope-o"></i>Contact</a></li>
                     </ul>
+                <!-- ***************************************************************************link to Login Modal************************************************-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a data-toggle="modal" data-target="#loginModal">
+                                <span class="glyphicon glyphicon-log-in"></span> Login
+                            </a>
+                        </li>
+                    </ul>
+                <!-- ***************************************************************************link to Login Modal END************************************************-->
+                </div>
+            </div>
+        </nav>
+        
+        <!-- *********************************************************************** Login Model *************************************************************************-->
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login </h4>
+                    </div>
+                    <div class="modal-body">
 
-
-
-<!-- Task One: In this task you will be updating the navigation bar in the page to introduce a form for the users to type in their login information -->
-                    <form class="form-inline" style="margin-top: 8px;">
+                    <form class="form-inline">
                       <div class="form-group">
                         <label class="sr-only" for="email">Email address</label>
                         <input type="email" class="form-control" id="email" placeholder="Email">
@@ -70,11 +90,16 @@
                       </div>
                     
                       <button type="submit" class="btn btn-info">Sign In</button>
+                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
                     </form>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+                
+           
 
+        <!-- *********************************************************************** Login Model END*************************************************************************-->
         <header class="jumbotron">
 
             <!-- Main component for a primary marketing message or call to action -->
