@@ -10,10 +10,10 @@
         
         <title>Ristorante Con Fusion</title>
 
-        <link  href="css/bootstrap.min.css" rel="stylesheet">
-        <link  href="css/bootstrap-theme.min.css" rel="stylesheet">
+        <link  href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link  href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/mystyles.css">
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
     </head>
 
@@ -55,7 +55,8 @@
                 <!-- ***************************************************************************link to Login Modal************************************************-->
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a data-toggle="modal" data-target="#loginModal">
+                            <!-- <a data-toggle="modal" data-target="#loginModal"> -->
+                                <a id="loginModal">
                                 <span class="glyphicon glyphicon-log-in"></span> Login
                             </a>
                         </li>
@@ -66,7 +67,7 @@
         </nav>
         
         <!-- *********************************************************************** Login Model *************************************************************************-->
-        <div id="loginModal" class="modal fade" role="dialog">
+        <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
             <!-- Modal content-->
                 <div class="modal-content">
@@ -75,7 +76,7 @@
                         <h4 class="modal-title">Login </h4>
                     </div>
                     <div class="modal-body">
-
+                    <!-- **********************************************************Login Form -->
                     <form class="form-inline">
                       <div class="form-group">
                         <label class="sr-only" for="email">Email address</label>
@@ -92,6 +93,7 @@
                       <button type="submit" class="btn btn-info">Sign In</button>
                      <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
                     </form>
+                    <!-- **********************************************************Login Form END -->
                     </div>
                 </div>
             </div>
@@ -117,10 +119,9 @@
                     </div>
 
 
-<!--Task Two: In this task you will be adding a block-sized button to the Jumbotron to the right of the restaurant logo -->
                     <div class="col-xs-12 col-sm-2">
                          <p style="padding:40px;"></p>
-                         <a type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table</a> <!-- Reservation model Link -->
+                         <a type="button" class="btn btn-warning btn-block" id="reserve">Reserve Table</a> <!-- Reservation model Link -->
                     </div>
                 </div>
             </div>
@@ -137,92 +138,82 @@
                     </div>
                     <div class="modal-body">
 
-                     <form class="form">
-                        <div class="form-group"> <!-- Radio Buttons -->
+                    <form id="reservation" style="color: black;">
+                          <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-2">
-                       
-                                    <label>Number of Guests</label>
+                                    <label for="exampleInputName2">Number of guests</label>
                                 </div>
-                            <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-                            </label>
-                            <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-                            </label>
+                                <div class="col-sm-10">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 4
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 5
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 6
+                                    </label>
+                                </div>
+                            </div>
+                          </div>
 
-                            <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
-                            </label>
-
-                             <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"> 4
-                            </label>
-
-                            <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5"> 5
-                            </label>
-
-                            <label class="radio-inline">
-                              <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6"> 6
-                            </label>
-                        </div>
-
-                        <div class="row">
+                          <div class="form-group">
+                            <div class="row">
                                 <div class="col-sm-2">
-                       
-                                    <label>Section</label>
+                                    <label for="exampleInputName2">Section</label>
                                 </div>
-                            <div class="btn-group" data-toggle="buttons">
-                              <label class="btn btn-success active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked > Non-Somking
-                              </label>
-                              <label class="btn btn-danger">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
-                              </label>
+                                <div class="col-sm-10">
+                                    <div class="btn-group" role="group">
+                                      <button type="button" class="btn btn-default btn-success" checked="">Non-smoking</button>
+                                      <button type="button" class="btn btn-default btn-danger">Smoking</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-            <!--******************************************Date Time********************************************-->
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <!--<h5>Date and Time</h5>-->
-                                <label>Date and Time</label>
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="row">
+                          </div>
+
+                          <div class="form-group">
+                            <div class="row">
+                                    <div class="col-sm-2">
+                                        <label for="exampleInputName2">Date and time</label>
+                                    </div>
                                     <div class="col-sm-4">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Date">
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar "></span></span>
-                                            </div>
-                                        </div>
+                                       <div style="position: relative;">
+                                            <i style="position: absolute; right: 0; padding: 10px 20px;" class="glyphicon glyphicon-calendar"></i>
+                                            <input type="text" class="form-control" placeholder="Date">
+                                        </div>                  
                                     </div>
-                                    <div class="col-sm-4 col-sm-offset-1">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Time">
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time "></span></span>
-                                            </div>
-                                        </div>
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <div style="position: relative;">
+                                            <input type="text" class="form-control" placeholder="Time">
+                                            <i style="position: absolute; right: 0; padding: 10px 20px;" class="glyphicon glyphicon-time"></i>
+                                        </div>                          
                                     </div>
                                 </div>
-                                
                             </div>
-                        </div>
-                                <button type="submit" class="btn btn-primary">Reserve</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            </div>
-                          </div>
-                          <br>
-                          <div class="alert alert-warning alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <strong>Warning!</strong> Please Call us to reserve for more than six guests.
-                          </div>
-                         </div>
-                        </div>
-                    </form>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button type="button" class="btn btn-primary">Reserve</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <div style="margin-top: 10px;" class="alert alert-warning alert-dismissible" role="alert">
+                                          <strong>Warning!</strong> Please call us to reserve for more than six guests
+                                        </div>
+                                    </div>                            
+                                </div>
+                                </div>
+                            </form></div>                            
+                   
                     </div>
                 </div>
             </div>
@@ -284,7 +275,7 @@
                             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
-                        <!-- **************************************************************************************Carousel Start/ Pause*********************************************************************-->
+                        <!-- **************************************************************************Carousel Start/ Pause*********************************-->
                         <div class="btn-group" id="carouselButtons">
                             <button class="btn btn-danger btn-xs" id="carousel-pause">
                                 <span class="glyphicon glyphicon-pause" arian-hidden="true"></span>
@@ -295,7 +286,7 @@
                             </button>     
                         </div>
 
-                        <!-- **************************************************************************************Carousel Start/ Pause END*********************************************************************-->
+                        <!-- **************************************************************************Carousel Start/ Pause END******************************-->
                     </div>
                 </div>
             </div>
@@ -369,7 +360,7 @@
                 </div>
             </div>
 
-            <!-- Task Three: In this task you will be adding another content row to the page-->
+          
             <!--
             <div class="row row-content">
                 <div class="col-xs-12 col-sm-3">
@@ -404,7 +395,7 @@
                               <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6"> 6
                             </label>
                         </div>
-    ******************************************Date *********************************************
+                        ******************************************Date *********************************************
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 ">
                                 <div class="form-group">  
@@ -422,7 +413,7 @@
                                        });
                                  </script>
                     
- ******************************************Time *********************************************
+                        ******************************************Time *********************************************
                        
                             <div class="form-group">
                                 <label for="date">Time</label>
@@ -496,9 +487,9 @@
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -512,5 +503,25 @@
         });
     </script>
 
+    <!-- *********************************************************************************Javascrip for Login and Reserve Modals********************************-->
+    <script>
+        $(document).ready(function()    //Login Modal Script 
+        {
+            $("#loginModal").click(function()
+            {
+                $("#myModal").modal();
+            });
+        });
+
+        $(document).ready(function()    //Reserve a Table Modal Script
+        {
+            $("#reserve").click(function()
+            {
+                $("#reserveModal").modal();
+            });
+        });
+
+    </script>
+    <!-- *********************************************************************************Javascrip for Login and Reserve Modals END********************************-->
     </body>
 </html>
